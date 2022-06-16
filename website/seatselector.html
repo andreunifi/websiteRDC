@@ -1,0 +1,78 @@
+<html>
+
+
+
+<style>
+.locations-table{
+background-image: url(foto/Airbus_seating2.jpg);
+width:900px;
+height:400px;
+  background-attachment: fixed;
+background-repeat: no-repeat;
+ background-size: 930px;
+ background-position:0px 77px;
+ justify-content: center;
+ transform: scale(0.9);
+ 
+}
+button{
+background-color:#3783b5;
+  margin: 0.5px;
+  -webkit-appearance: none;
+   -moz-appearance: none;
+  border-radius: 3px;
+  padding-top:0.1px;
+}
+</style>
+
+
+<div id="mycanvas" class="locations-table"> 
+
+</div>
+
+<select>
+<option>value</option>
+</select>
+
+
+
+
+
+
+
+
+</html>
+<script> 
+
+function genereateSeats(initialposx, initialposy, distancecell, distancerow,rownumber, cellnumber){
+var c = document.getElementById("mycanvas");
+var intialx=initialposx;
+var intialy=initialposy;
+var distance=0;
+var distancerow=0;
+for(var row=0;row<rownumber;row++){
+for(var i=0;i<cellnumber;i++){
+var button=document.createElement("button");
+button.style.class=''
+c.append(button);
+button.style.width="12.8px";
+button.style.height="12.8px";
+button.style.position="absolute";        
+button.style.top=intialx + distancerow + 'px';
+button.style.left= intialy +distance + 'px';
+distance=17*i;
+
+
+}
+distancerow=13*row;
+
+}
+};
+//first seat is x :162 y :175
+
+genereateSeats(156.3,175,17,13,4,11);
+genereateSeats(211.3,175,17,13,4,11);
+genereateSeats(156.3,408,17,13,4,18);
+genereateSeats(211.3,408,17,13,4,18);
+
+</script>
